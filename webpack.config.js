@@ -4,19 +4,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
 const isProduction = process.env.NODE_ENV == 'production';
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 
 
 const config = {
-    entry: {
-        main: './src/index.js',
-    },
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        // clear: true,
     },
     devServer: {
         open: true,
@@ -37,22 +33,17 @@ const config = {
                 
             },
         }),
-     /*   new HtmlWebpackPlugin({
-            template: './src/mentions.html',
-            filename: 'mentions.html',
-            meta:{
-                viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
-                
-            },
-        }),*/
+
         new MiniCssExtractPlugin({
-            filename: "style.scss",
+            filename: "style.css",
         }),
        new CopyPlugin({
             patterns: [
                 {from: "./src/ressources", to: "ressources"},
             ],
         }),
+
+    
     ],
     module: {
         rules: [
@@ -60,34 +51,21 @@ const config = {
                 test: /\.(js|jsx)$/i,
                 loader: 'babel-loader',
             },
-          /*  {
+            {
                 test: /\.css$/i,
                 use: [stylesHandler,'css-loader'],
-            },*/
+            },
             {
-                test: /\.s[ac]ss$/i, 
-                use: [
-                  // Creates `style` nodes from JS strings
-                  stylesHandler,
-                  // Translates CSS into CommonJS
-                  "css-loader",
-                  // Compiles Sass to CSS
-                  "sass-loader",
-                ],
-              },
-          /*    {
-                test: require.resolve('jquery'),
-                use: [
-                  {
-                    loader: 'expose-loader',
-                    options: 'jQuery',
-                  },
-                  {
-                    loader: 'expose-loader',
-                    options: '$',
-                  },
-                ],
-              }*/
+                test: /\.s[ac]ss$/i,
+                use: [stylesHandler, 'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                type: 'asset',
+            },
+
+            // Add your rules for custom modules here
+            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
 };

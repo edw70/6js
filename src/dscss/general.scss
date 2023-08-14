@@ -1,0 +1,74 @@
+$bg-light:#EAEEEF;
+$color-light:#030303;
+$bg-dark:#233F46;
+$color-dark:#FFFCFC;
+$font-lato: 'Lato', sans-serif;
+$font-lemon: 'Lemon', cursive;
+$barre-entete:linear-gradient(180deg, #4285BE 0%, #C2F0FB 100%);
+
+
+
+body {
+    background-color: $bg-light;
+    color: $color-light;
+    font-family:$font-lato;
+    background-image: url(ressources/Bg_Desktop.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barre_bleu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    @include barre-header;
+}
+#loupe {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+    position: relative;
+    left: -70px;
+    top: 20px;
+
+}
+#text {
+    width: 508px;
+    height: 59px;
+    border-radius: 25px;
+    opacity: 70%; 
+    border: none;
+}
+#to-do {
+    font-size: 20px;
+    margin-left: 56px;
+    margin-right: 80px;
+    color:$color-dark;
+    font-family: $font-lemon;
+    
+}
+#trier {
+ //   @include custom-button;
+    background-color: transparent;
+    margin-left: 111px;
+    margin-right: 56px;
+    font-family: $font-lemon;
+    font-size: 20px;
+    color:$color-dark;
+ //color: red;
+    border:solid 1px #8DAEB6 ;
+    border-radius: 5px;
+    box-shadow: 2.0730095092177594e-16px 3.385481595993042px 3.385481595993042px 0px #F7FFFF inset, -2.0730095092177594e-16px -3.385481595993042px 3.385481595993042px 0px #809EA5 inset;
+    filter: drop-shadow(4.735301163329316e-16px 7.733333110809326px 15.466666221618652px rgba(39, 48, 50, 0.44));
+}
+.switch {
+    @include switch-styles;
+}
