@@ -5,7 +5,7 @@ $color-dark:#FFFCFC;
 $font-lato: 'Lato', sans-serif;
 $font-lemon: 'Lemon', cursive;
 $barre-entete:linear-gradient(180deg, #4285BE 0%, #C2F0FB 100%);
-
+$line:#3972A3;
 
 
 body {
@@ -14,7 +14,7 @@ body {
     font-family:$font-lato;
     background-image: url(ressources/Bg_Desktop.webp);
     background-repeat: no-repeat;
-    background-position: center;
+    background-size: cover;
     height: 100vh;
 
 }
@@ -27,8 +27,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 100px;
+    margin-right: 41px;
+    margin-top: 53px;
     @include barre-header;
+    padding-top: 11px;
+    padding-bottom: 17px;
+    box-sizing: border-box;
 }
 #loupe {
     padding: 0;
@@ -36,19 +40,25 @@ body {
     border: none;
     z-index: 1;
     position: relative;
-    left: -70px;
-    top: 20px;
+    left: -60px;
+    top: 18px;
+    cursor: pointer;
 
 }
 #text {
-    width: 508px;
+    width: 500px;
     height: 59px;
     border-radius: 25px;
     opacity: 70%; 
     border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: $font-lato;
+    padding-left: 50px;
 }
 #to-do {
     font-size: 20px;
+    letter-spacing: 1px;
     margin-left: 56px;
     margin-right: 80px;
     color:$color-dark;
@@ -56,19 +66,264 @@ body {
     
 }
 #trier {
- //   @include custom-button;
     background-color: transparent;
     margin-left: 111px;
     margin-right: 56px;
     font-family: $font-lemon;
     font-size: 20px;
     color:$color-dark;
- //color: red;
     border:solid 1px #8DAEB6 ;
     border-radius: 5px;
     box-shadow: 2.0730095092177594e-16px 3.385481595993042px 3.385481595993042px 0px #F7FFFF inset, -2.0730095092177594e-16px -3.385481595993042px 3.385481595993042px 0px #809EA5 inset;
     filter: drop-shadow(4.735301163329316e-16px 7.733333110809326px 15.466666221618652px rgba(39, 48, 50, 0.44));
+    cursor: pointer;
 }
 .switch {
     @include switch-styles;
+}
+#toogle{
+    margin-top: 53px;
+    cursor: pointer;
+}
+#ajout_task{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    margin-left: 390px;
+}
+.line {
+    height: 2px;
+    width: 100px;
+    background-color:$line;
+    margin-top: 10px;
+    width: 420px;
+    
+}
+#plus{
+    @include custom_plus;
+    border: none;
+    color: $color-dark;
+    font-size: 40px;
+    width: 65px;
+    height: 65px;
+    font-family: $font-lato;
+    margin-left: 52px;
+    margin-right: 52px;
+    cursor: pointer;
+}
+#classement{
+    margin-left: 380px;
+ //   display: none;   /*provisoire***************************************************************/
+}
+#t_faire{
+    font-family: $font-lemon;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+    margin-top: 32px;
+}
+#t_cours{
+    font-family: $font-lemon;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+}
+#t_terminer{
+    font-family: $font-lemon;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+    margin-top: 40px;
+}
+#modal_trier{                             /*div desactivé*/
+    position: fixed;
+    z-index: 2;
+    
+    font-size: 14px;
+    font-family: $font-lemon;
+    letter-spacing: 0.28px;
+    margin-left: 1300px;
+    top: 250px;
+    overflow: auto;
+    border: 1px solid $line;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #FFFCFCB2;
+}
+#toutes::before{
+    content:"\002605";
+    color: #F8BE4E;
+    padding-right: 5px;
+    font-size: 18px;
+    margin-left: -6px;
+}
+#toutes{
+    cursor: pointer;
+}
+#m_afaire, #s_afaire{
+    border-left:2px solid #FC5B5D;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#m_encours, #s_encours{
+    border-left:2px solid #F8E53E;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#m_terminés, #s_terminés{
+    border-left:2px solid #34C7F5;
+    padding-left: 10px;
+    cursor: pointer;
+}
+#modal_status{                  /*div desactivé*/    
+    position: fixed;
+    z-index: 33;
+    display: none; 
+    font-size: 14px;
+    font-family: $font-lemon;
+    letter-spacing: 0.28px;
+    margin-left: 1250px;
+    top: 350px;
+    overflow: auto;
+    border: 1px solid $line;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #FFFCFCB2;
+}
+#newTask{                           /*div desactivé*/
+    
+    font-family: $font-lemon;
+    font-size: 20px;
+    background-color: $color-dark;
+    opacity: 70%;
+    margin-left: 375px;
+    margin-right: 470px;
+    margin-top: 29px;
+    padding-left: 41px;
+    padding-top: 55px;
+    padding-bottom: 12px;
+}
+#objectif{
+    display: block;
+    margin-top: 20px;
+}
+#validation{
+    display: block;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #70B29A 0%, #B7FFFB 100%);
+    box-shadow: 3.483439671544459e-16px 5.688889026641846px 5.688889026641846px 0px #C1FFFF inset, -3.483439671544459e-16px -5.688889026641846px 5.688889026641846px 0px #66A28C inset;
+    box-shadow:drop-shadow(8.164311821172194e-16px 13.333333015441895px 26.66666603088379px rgba(31, 48, 42, 0.42));
+    color: $color-light;
+    border: none;
+    margin-top: 5px;
+    margin-left: 500px;
+    margin-bottom: 12px;
+
+}
+#validation::before{
+    content:"\002714";
+    font-size:19px;
+}
+#descriptask{
+    width: 811px;
+    height: 297px;
+    margin-left: 113px;
+}
+#nameStatus{
+    margin-bottom: 104px;
+}
+#status{
+    margin-left: 348px;
+    background: linear-gradient(180deg, #498DC6 0%, #85AAB8 88.02%, #8DAEB6 100%);
+    border:solid 1px #043891;
+    border-radius: 5px;
+    box-shadow: 2.0730095092177594e-16px 3.385481595993042px 3.385481595993042px 0px #F7FFFF inset, -2.0730095092177594e-16px -3.385481595993042px 3.385481595993042px 0px #809EA5 inset;
+    filter: drop-shadow(4.735301163329316e-16px 7.733333110809326px 15.466666221618652px rgba(39, 48, 50, 0.44));
+    font-size: 18px;
+    font-family: $font-lemon;
+}
+#texname{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px #CCE7FFCC;
+    outline: none;
+    width: 284px;
+    font-family: $font-lato;
+    font-size: 20px;
+    margin-left: 10px;
+}
+#date{
+    font-family: $font-lato;
+    font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid 2px #CCE7FFCC;
+    outline: none;
+    width: 284px;
+    margin-left: 10px;
+}
+#descriptask{
+    font-family: $font-lato;
+    font-size: 20px;
+    border:solid 2px #CCE7FFCC;
+    background-color: $color-dark;
+    opacity: 70%;
+    outline: none;
+}
+#rouge{
+    display: flex;
+    border-left:3px solid #FC5B5D;
+    border-top:1px solid #FC5B5D;
+    border-bottom:1px solid #FC5B5D;
+    border-right:1px solid #FC5B5D;
+//    padding-left: 10px;
+    padding: 20px;
+    cursor: pointer;
+    color: $color-light;
+    font-family: $font-lato;
+    font-size: 20px;
+    width: 1020px;
+    @include task;
+}
+.poubelle{
+    width: 36px;
+    height: 36px;
+    background-image: url(ressources/poubellenoire.svg);
+    margin-left: 896px;
+    
+}
+#jaune{
+    display: flex;
+    cursor: pointer;
+    color: $color-light;
+    font-family: $font-lato;
+    font-size: 20px;
+    border-left:3px solid #F8E53E;
+    border-top:1px solid #F8E53E;
+    border-bottom:1px solid #F8E53E;
+    border-right:1px solid #F8E53E;
+    padding: 20px;
+    width: 1020px;
+    @include task;
+}
+#bleu{
+    display: flex;
+    cursor: pointer;
+    color: $color-light;
+    font-family: $font-lato;
+    font-size: 20px;
+    border-left:3px solid #34C7F5;
+    border-top:1px solid #34C7F5;
+    border-bottom:1px solid #34C7F5;
+    border-right:1px solid #34C7F5;
+    padding: 20px;
+    width: 1020px;
+    @include task;
 }

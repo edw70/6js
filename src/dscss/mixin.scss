@@ -49,5 +49,17 @@
     }
 }
 
+@mixin custom_plus
+{
+    background: linear-gradient(180deg, #2F5E87 0%, #4081B8 100%);
+    box-shadow: 1.7217626807437342e-16px 2.811851739883423px 2.811851739883423px 0px #4386BF inset, -1.7217626807437342e-16px -2.811851739883423px 2.811851739883423px 0px #2D5980 inset;
+    filter: drop-shadow(5.306802763171265e-16px 8.666666984558105px 17.33333396911621px rgba(11, 23, 33, 0.26));
+    border-radius: 50%;
+}
 
-
+@mixin task
+{
+    border-radius: 0px 4px 4px 0px;
+    background: rgba(255, 252, 252, 0.70);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px 4px 8px 0px rgba(0, 0, 0, 0.04), 0px 16px 24px 0px rgba(0, 0, 0, 0.04), 0px 24px 32px 0px rgba(0, 0, 0, 0.04);
+}
