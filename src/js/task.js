@@ -47,12 +47,18 @@ validation.addEventListener("click", function(e){
         selectedStatus = "A faire";
     }
 
-    // Vérifie si une tâche existante est sélectionnée pour modification
+   /*  // Vérifie si une tâche existante est sélectionnée pour modification
     const clickedTask = document.querySelector(".selected-task");
  //   console.log(clickedTask);
     if (clickedTask) {
         taskId = clickedTask.getAttribute("data-task-id");
-    }
+    } */
+     // Vérifie si une tâche existante est sélectionnée pour modification
+     const clicked = document.querySelector(".selected-task");
+     //   console.log(clickedTask);
+        if (clicked) {
+            taskId = clicked.getAttribute("data-task-id");
+        }
 
     if (taskId) {
         // Mettre à jour la tâche existante
@@ -162,6 +168,7 @@ function displayTasks() {
                  const newTaskElement = document.createElement("li");
                     newTaskElement.textContent = storedData.name;
                     newTaskElement.setAttribute('data-task-id', key);
+                    newTaskElement.id = key; //j
                     newTaskElement.setAttribute('data-status', storedData.status); // Utilisez data-status
                     newTaskElement.setAttribute('data-echeance', storedData.echeance); // Ajoutez cet attribut
                     newTaskElement.setAttribute('data-objectif', storedData.objectif); // Ajoutez cet attribut
@@ -169,17 +176,20 @@ function displayTasks() {
                     poubelle.classList.add("poubelle");
                 // Ajoutez cet élément DOM à la section correspondante en fonction du statut (A faire, En cours, Terminés)
                     if (storedData.status === "A faire"){
-                        newTaskElement.id = "rouge";
+                        newTaskElement.classList.add("rouge");//jj
+                        // newTaskElement.id = "rouge";//jj
                         newTaskElement.setAttribute("draggable", "true");
                         aFaire.appendChild(newTaskElement);
                         newTaskElement.appendChild(poubelle);
                     }else if (storedData.status === "En cours"){
-                        newTaskElement.id = "jaune";
+                        newTaskElement.classList.add("jaune");//jj
+                        // newTaskElement.id = "jaune"; //j
                         newTaskElement.setAttribute("draggable", "true");
                         enCours.appendChild(newTaskElement);
                         newTaskElement.appendChild(poubelle);
                     }else if (storedData.status === "Terminés"){
-                        newTaskElement.id = "bleu";
+                        newTaskElement.classList.add("bleu");//jj
+                        // newTaskElement.id = "bleu"; //j
                         newTaskElement.setAttribute("draggable", "true");
                         terminés.appendChild(newTaskElement);
                         newTaskElement.appendChild(poubelle);

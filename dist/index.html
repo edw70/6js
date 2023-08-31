@@ -11,6 +11,12 @@
         <div id="app"></div>
 
         <template id="item-template">
+            <div class="caché">
+                <h1 id="to-do2"></h1>
+                <div id="toogle2">
+                    <input checked="true" type="checkbox" class="switch" id="dark">
+                </div>
+            </div>
             <div class="header">
                 <div class="barre_bleu">
                     <h1 id="to-do"></h1>
@@ -27,11 +33,12 @@
                                   </clipPath>
                                 </defs>
                               </svg></button>
+                              <button id="loupe2"></button>
                         </form>
                         <button id="trier"></button>
                 </div>
                 <div id="toogle">
-                    <input checked="true" type="checkbox" class="switch">
+                    <input checked="true" type="checkbox" class="switch" id="dark1">
                 </div>
             </div>
             <div id="ajout_task">
@@ -41,12 +48,19 @@
             </div>
 
             <div id="classement">
-                <h2 id="t_faire" ></h2>
-                <ul id="a_faire" draggable="true"></ul>
-                <h2 id="t_cours"></h2>
-                <ul id="en_cours" draggable="true"></ul>
-                <h2 id="t_terminer"></h2>
-                <ul id="terminer" draggable="true"></ul>
+              
+                    <h2 id="t_faire" ></h2>
+                    <ul id="a_faire" class="droppable-zone"></ul>
+             
+                
+                    <h2 id="t_cours" ></h2>
+                    <ul id="en_cours" class="droppable-zone" ></ul>
+                
+               
+                    <h2 id="t_terminer"></h2>
+                    <ul id="terminer" class="droppable-zone" ></ul>
+               
+            </div>
             </div>
 
             <div id="modal_trier" style="display: none;">

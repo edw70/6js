@@ -6,7 +6,8 @@ const clonedTemplate = document.importNode(itemTemplate.content, true);
 
 // Remplissage des données
 //const itemTitle = clonedTemplate.querySelector(".item-title");
-const titre = clonedTemplate.querySelector("h1");
+const titre = clonedTemplate.querySelector("#to-do");
+const titre2 = clonedTemplate.querySelector("#to-do2");
 const trier = clonedTemplate.querySelector("#trier");
 const ajout = clonedTemplate.querySelector("#plus");
 const aFaire = clonedTemplate.querySelector("#t_faire");
@@ -31,6 +32,7 @@ const objectif = clonedTemplate.querySelector("#objectif");
 
 //itemTitle.textContent = "Titre de l'élément";
 titre.textContent = "TO DO LIST";
+titre2.textContent = "TO DO LIST";
 trier.textContent = "trier";
 ajout.textContent = "+";
 aFaire.textContent = "A faire :";

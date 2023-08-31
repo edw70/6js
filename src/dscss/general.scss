@@ -1,23 +1,19 @@
-$bg-light:#EAEEEF;
-$color-light:#030303;
-$bg-dark:#233F46;
-$color-dark:#FFFCFC;
-$font-lato: 'Lato', sans-serif;
-$font-lemon: 'Lemon', cursive;
-$barre-entete:linear-gradient(180deg, #4285BE 0%, #C2F0FB 100%);
-$line:#3972A3;
-
 
 body {
     background-color: $bg-light;
     color: $color-light;
     font-family:$font-lato;
-    background-image: url(ressources/Bg_Desktop.webp);
-    background-repeat: no-repeat;
+    background-image: url(ressources/background.png);
+    background-repeat: repeat-y;
     background-size: cover;
     height: 100vh;
 
 }
+.dark{
+    background-color: $bg-dark;
+    color:$color-dark;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -27,11 +23,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 41px;
-    margin-top: 53px;
+    margin-right: 2.5625rem;
+    margin-top: 3.3125rem;
     @include barre-header;
-    padding-top: 11px;
-    padding-bottom: 17px;
+    padding-top: 0.6875rem;
+    padding-bottom: 1.0625rem;
     box-sizing: border-box;
 }
 #loupe {
@@ -40,40 +36,56 @@ body {
     border: none;
     z-index: 1;
     position: relative;
-    left: -60px;
-    top: 18px;
+    left: -3.75rem;
+    top: 1.125rem;
     cursor: pointer;
 
 }
+#loupe2{
+    display: none;
+}
 #text {
     width: 500px;
-    height: 59px;
-    border-radius: 25px;
+    height: 3.6875rem;
+    border-radius: 1.5625rem;
     opacity: 70%; 
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: $font-lato;
-    padding-left: 50px;
+    padding-left: 3.125rem;
+}
+.caché{
+    display: none;
+    padding-right: 2.5rem;
+
 }
 #to-do {
-    font-size: 20px;
-    letter-spacing: 1px;
-    margin-left: 56px;
-    margin-right: 80px;
+    font-size: 1.25rem;
+    letter-spacing: 0.0625rem;
+    margin-left: 3.5rem;
+    margin-right: 5rem;
     color:$color-dark;
     font-family: $font-lemon;
     
 }
+#to-do2{
+    font-size: 1.25rem;
+    letter-spacing: 0.0625rem;
+    margin-left: 3.5rem;
+    margin-right: 5rem;
+    color:$line;
+    font-family: $font-lemon;
+}
 #trier {
     background-color: transparent;
-    margin-left: 111px;
-    margin-right: 56px;
+    margin-left: 6.9375rem;
+    margin-right: 3.5rem;
     font-family: $font-lemon;
-    font-size: 20px;
+    font-size: 1.25rem;
     color:$color-dark;
     border:solid 1px #8DAEB6 ;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     box-shadow: 2.0730095092177594e-16px 3.385481595993042px 3.385481595993042px 0px #F7FFFF inset, -2.0730095092177594e-16px -3.385481595993042px 3.385481595993042px 0px #809EA5 inset;
     filter: drop-shadow(4.735301163329316e-16px 7.733333110809326px 15.466666221618652px rgba(39, 48, 50, 0.44));
     cursor: pointer;
@@ -82,20 +94,21 @@ body {
     @include switch-styles;
 }
 #toogle{
-    margin-top: 53px;
+    margin-top: 3.3125rem;
     cursor: pointer;
 }
+
 #ajout_task{
     display: flex;
     align-items: center;
-    margin-top: 13px;
-    margin-left: 390px;
+    margin-top: 0.8125rem;
+    margin-left: 24.375rem;
 }
 .line {
     height: 2px;
-    width: 100px;
+ //   width: 100px;
     background-color:$line;
-    margin-top: 10px;
+    margin-top: 0.625rem;
     width: 420px;
     
 }
@@ -103,148 +116,160 @@ body {
     @include custom_plus;
     border: none;
     color: $color-dark;
-    font-size: 40px;
-    width: 65px;
-    height: 65px;
+    font-size: 2.5rem;
+    width: 4.0625rem;
+    height: 4.0625rem;
     font-family: $font-lato;
-    margin-left: 52px;
-    margin-right: 52px;
+    margin-left: 3.25rem;
+    margin-right: 3.25rem;
     cursor: pointer;
 }
 #classement{
-    margin-left: 380px;
+    margin-left: 23.125rem;
+    margin-right: 25rem;
+    width: 1060px;
  //   display: none;   /*provisoire***************************************************************/
 }
 #t_faire{
     font-family: $font-lemon;
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    margin-bottom: 12px;
-    margin-top: 32px;
+    font-size: 1.25rem;
+    letter-spacing: 0.025rem;
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
 }
 #t_cours{
     font-family: $font-lemon;
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    margin-bottom: 12px;
-    margin-top: 40px;
+    font-size: 1.25rem;
+    letter-spacing: 0.025rem;
+    margin-bottom: 0.75rem;
+    margin-top: 2.5rem;
 }
 #t_terminer{
     font-family: $font-lemon;
-    font-size: 20px;
-    letter-spacing: 0.4px;
-    margin-bottom: 12px;
-    margin-top: 40px;
+    font-size: 1.25rem;
+    letter-spacing: 0.025rem;
+    margin-bottom: 0.75rem;
+    margin-top: 2.5rem;
 }
 #modal_trier{                             /*div desactivé*/
     position: fixed;
     z-index: 2;
-    
-    font-size: 14px;
+    font-size: 0.875rem;
     font-family: $font-lemon;
-    letter-spacing: 0.28px;
-    margin-left: 1300px;
-    top: 250px;
+    letter-spacing: 0.0175rem;
+    margin-left: 81.25rem;
+    top: 10.3125rem;
     overflow: auto;
     border: 1px solid $line;
-    padding: 20px;
+    padding: 1.25rem;
     box-sizing: border-box;
-    border-radius: 5px;
-    background-color: #FFFCFCB2;
+    border-radius: 0.3125rem;
+    background-color:$color-boxlight;
+}
+.dark #modal_trier{
+    background-color: $color-boxDark;
+    
 }
 #toutes::before{
     content:"\002605";
     color: #F8BE4E;
-    padding-right: 5px;
-    font-size: 18px;
-    margin-left: -6px;
+    padding-right: 0.3125rem;
+    font-size: 1.125rem;
+    margin-left: -0.375rem;
 }
 #toutes{
     cursor: pointer;
 }
 #m_afaire, #s_afaire{
     border-left:2px solid #FC5B5D;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     cursor: pointer;
 }
 #m_encours, #s_encours{
     border-left:2px solid #F8E53E;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     cursor: pointer;
 }
 #m_terminés, #s_terminés{
     border-left:2px solid #34C7F5;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     cursor: pointer;
 }
 #modal_status{                  /*div desactivé*/    
     position: fixed;
     z-index: 33;
     display: none; 
-    font-size: 14px;
+    font-size: 0.875rem;
     font-family: $font-lemon;
-    letter-spacing: 0.28px;
-    margin-left: 1250px;
-    top: 350px;
+    letter-spacing: 0.0175rem;
+    margin-left: 78.125rem;
+    top: 21.875rem;
     overflow: auto;
     border: 1px solid $line;
-    padding: 20px;
+    padding: 1.25rem;
     box-sizing: border-box;
-    border-radius: 5px;
-    background-color: #FFFCFCB2;
+    border-radius: 0.3125rem;
+    background-color: $color-boxlight;
+}
+.dark #modal_status{
+    background-color: $color-boxDark;
 }
 #newTask{                           /*div desactivé*/
     
     font-family: $font-lemon;
-    font-size: 20px;
+    font-size: 1.25rem;
     background-color: $color-dark;
     opacity: 70%;
-    margin-left: 375px;
-    margin-right: 470px;
-    margin-top: 29px;
-    padding-left: 41px;
-    padding-top: 55px;
-    padding-bottom: 12px;
+    margin-left: 23.4375rem;
+    margin-right: 29.375rem;
+    margin-top: 1.8125rem;
+    padding-left: 2.5625rem;
+    padding-top: 3.4375rem;
+    padding-bottom: 0.75rem;
+}
+.dark #newTask{
+    background-color: $color-boxDark;
+    opacity: 100%;
 }
 #objectif{
     display: block;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 #validation{
     display: block;
-    width: 47px;
-    height: 47px;
+    width: 2.9375rem;
+    height: 2.9375rem;
     border-radius: 50%;
     background: linear-gradient(180deg, #70B29A 0%, #B7FFFB 100%);
     box-shadow: 3.483439671544459e-16px 5.688889026641846px 5.688889026641846px 0px #C1FFFF inset, -3.483439671544459e-16px -5.688889026641846px 5.688889026641846px 0px #66A28C inset;
     box-shadow:drop-shadow(8.164311821172194e-16px 13.333333015441895px 26.66666603088379px rgba(31, 48, 42, 0.42));
     color: $color-light;
     border: none;
-    margin-top: 5px;
-    margin-left: 500px;
-    margin-bottom: 12px;
+    margin-top: 0.3125rem;
+    margin-left: 31.25rem;
+    margin-bottom: 0.75rem;
 
 }
 #validation::before{
     content:"\002714";
-    font-size:19px;
+    font-size:1.1875rem;
 }
 #descriptask{
     width: 811px;
-    height: 297px;
-    margin-left: 113px;
+    height: 18.5625rem;
+    margin-left: 7.0625rem;
 }
 #nameStatus{
-    margin-bottom: 104px;
+    margin-bottom: 6.5rem;
 }
 #status{
-    margin-left: 348px;
+    margin-left: 21.75rem;
     background: linear-gradient(180deg, #498DC6 0%, #85AAB8 88.02%, #8DAEB6 100%);
     border:solid 1px #043891;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     box-shadow: 2.0730095092177594e-16px 3.385481595993042px 3.385481595993042px 0px #F7FFFF inset, -2.0730095092177594e-16px -3.385481595993042px 3.385481595993042px 0px #809EA5 inset;
     filter: drop-shadow(4.735301163329316e-16px 7.733333110809326px 15.466666221618652px rgba(39, 48, 50, 0.44));
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: $font-lemon;
 }
 #texname{
@@ -255,29 +280,47 @@ body {
     outline: none;
     width: 284px;
     font-family: $font-lato;
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 1.25rem;
+    margin-left: 0.625rem;
+}
+.dark #texname{
+    background-color: transparent;
+    color: $color-dark;
 }
 #date{
     font-family: $font-lato;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: solid 2px #CCE7FFCC;
     outline: none;
     width: 284px;
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
+.dark #date{
+    background-color: transparent;
+    color: $color-dark;
+}
+
+.dark input[type="date"]{
+    color-scheme: dark;
+}
+
 #descriptask{
     font-family: $font-lato;
-    font-size: 20px;
+    font-size: 1.25rem;
     border:solid 2px #CCE7FFCC;
     background-color: $color-dark;
     opacity: 70%;
     outline: none;
 }
-#rouge{
+.dark #descriptask{
+    background-color: $color-boxDark;
+    
+    color: $color-dark;
+}
+.rouge{
     display: flex;
     border-left:3px solid #FC5B5D;
     border-top:1px solid #FC5B5D;
@@ -288,42 +331,406 @@ body {
     cursor: pointer;
     color: $color-light;
     font-family: $font-lato;
-    font-size: 20px;
-    width: 1020px;
+    font-size: 1.25rem;
+    width: 1010px;
     @include task;
+    list-style: none;
+    transition: background-color 0.2s ease; /* Ajoutez une transition */
+}
+.dark .rouge{
+    color: $color-dark;
+    background-color: $color-boxDark;
+
 }
 .poubelle{
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     background-image: url(ressources/poubellenoire.svg);
-    margin-left: 896px;
+
     
 }
-#jaune{
+.dark .poubelle{
+    background-image: url(ressources/poubelleblanche.svg);
+}
+.jaune{
     display: flex;
     cursor: pointer;
     color: $color-light;
     font-family: $font-lato;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-left:3px solid #F8E53E;
     border-top:1px solid #F8E53E;
     border-bottom:1px solid #F8E53E;
     border-right:1px solid #F8E53E;
-    padding: 20px;
-    width: 1020px;
+    padding: 1.25rem;
+    width: 1010px;
     @include task;
+    list-style: none;
 }
-#bleu{
+.dark .jaune{
+    background-color: $color-boxDark;
+    color: $color-dark;
+}
+.bleu{
     display: flex;
     cursor: pointer;
     color: $color-light;
     font-family: $font-lato;
-    font-size: 20px;
+    font-size: 1.25rem;
     border-left:3px solid #34C7F5;
     border-top:1px solid #34C7F5;
     border-bottom:1px solid #34C7F5;
     border-right:1px solid #34C7F5;
-    padding: 20px;
-    width: 1020px;
+    padding: 1.25rem;
+    width: 1010px;
     @include task;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.dark .bleu{
+    background-color: $color-boxDark;
+    color: $color-dark;
+}
+ul{
+    width:1060px;
+    min-height:200px;
+    padding-top: 1.25rem;
+    padding-left: 0px;
+    list-style: none;
+}
+li{
+    margin-bottom:15px;
+    background-color: $color-boxlight;
+    justify-content: space-between;
+    -webkit-box-shadow: -3px 6px 18px 1px #334b60; 
+    box-shadow: -3px 06x 18px 1px #334b60;
+}
+.dark li{
+    -webkit-box-shadow: -3px 6px 18px 1px #80919f; 
+    box-shadow: -3px 06x 18px 1px #80919f;
+}
+.highlight{
+    background-color: $line;
+}
+
+@media screen and (max-device-width: 1440px){
+
+    #classement{
+        margin-left:8.75rem;
+    }
+    #ajout_task{
+        margin-left: 10rem;
+    }
+    #modal_trier{
+        margin-left: 65.625rem;
+    }
+    #newTask{
+        margin-left: 8.75rem;
+        margin-right: 15rem;
+    }
+    #modal_status{
+        margin-left: 63.75rem;
+    }
+
+}
+
+@media screen and (max-device-width: 1024px){
+    
+    #to-do{
+        display: none;
+    }
+    #toogle{
+        display: none;
+    }
+    .caché{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.25rem;
+        align-items: center;
+    }
+    #classement{
+        margin-left:3.75rem;
+        margin-right: 0;
+        width: 800px;
+    }
+    .barre_bleu{
+        margin-top: 0.9375rem;
+        padding-left: 6.25rem;
+        margin-right: 0rem;
+    }
+    .rouge, .jaune, .bleu{
+        width: 850px;
+    }
+    #ajout_task{
+        margin-left: 4.0625rem;
+    }
+    .line{
+        width: 350px;
+    }
+    #modal_trier{
+        margin-left: 50rem;
+        top: 11.875rem;
+    }
+    #newTask{
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+    #descriptask{
+        width: 611px;
+    }
+    #validation{
+        margin-left: 25rem;
+    }
+    #status{
+        margin-left: 15.5rem;
+    }
+    #modal_status{
+        margin-left: 50rem;
+        top: 25rem;
+    }
+    ul{
+        width: 800px;
+    }
+    
+
+}
+
+@media screen and (max-device-width: 768px){
+    #classement{
+        margin-left:3.125rem;
+        width: 650px;
+    }
+    .barre_bleu{
+        margin-top: 0.9375rem;
+        padding-left: 7.5rem;
+        margin-right: 0rem;
+    }
+    ul{
+        width:650px;
+    }
+    #trier {
+        margin-left: 3.125rem;
+        margin-right: 3.125rem;
+    }
+    #text{
+        width: 300px;
+    }
+    #ajout_task{
+        margin-left: 2.5rem;
+    }
+    .line{
+        width: 250px;
+    }
+    .rouge, .jaune, .bleu{
+        width: 600px;
+    }
+    #modal_trier{
+        margin-left: 37.5rem;
+        top: 11.875rem;
+    }
+    #descriptask{
+        width: 550px;
+        margin-left: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    #validation{
+        margin-left: 17.5rem;
+    }
+    #status{
+        margin-left: 3rem;
+    }
+    #modal_status{
+        margin-left: 20rem;
+        top: 23.75rem;
+    }
+    #nameStatus{
+        display: block;
+        margin-bottom: 3.125rem;
+    }
+    #status{
+        position: relative;
+        top:-6.25rem;
+        margin-left: 15.625rem;
+    }
+    #texname{
+        margin-top: 4.375rem;
+    }
+
+}
+
+@media screen and (max-device-width: 425px){
+    #classement{
+        margin-left:0.625rem;
+        width: 400px;
+    }
+    .rouge, .jaune, .bleu{
+        width: 350px;
+    }
+    ul{
+        width:400px;
+    }
+    .barre_bleu{
+        margin-top: 0.9375rem;
+        padding-left: 1.25rem;
+        
+    }
+    #trier {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+        font-size: 1rem;
+    }
+    #loupe{
+        display: none;
+    }
+    #loupe2{
+        display: flex;
+        position: relative;
+        content: url(ressources/search.svg);
+        background-color: transparent;
+        border: none;
+        top: -1.875rem;
+        margin-left:15.625rem;
+    }
+    #text{
+        width: 250px;
+        height: 40px;
+    }
+    #recherche{
+        height: 40px;
+    }
+    #ajout_task{
+        margin-left: 0.625rem;
+    }
+    #plus{
+        font-size: 1.875rem;
+        width: 65px;
+        height: 40px;
+        align-items: center;
+    }
+    #modal_trier{
+        margin-left: 12.5rem;
+        top: 11.875rem;
+    }
+    #status{
+        position: relative;
+        top:-6.875rem;
+        margin-left: 110px;
+    }
+    #texname{
+        margin-top: 0.625rem;
+        width: 200px;
+    }
+    #modal_status{
+        margin-left: 8.75rem;
+        top: 18.75rem;
+    }
+    #descriptask{
+        width: 280px;
+        margin-left: 0.625rem;
+        margin-top: 0.625rem;
+    }
+    #validation{
+        margin-left: 8.125rem;
+    }
+    #newTask{
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+    }
+    #nameStatus{
+        margin-bottom: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    #objectif{
+        margin-top: 2.5rem;
+    }
+
+}
+
+@media screen and (max-device-width: 375px) {
+    #classement{
+        width: 300px;
+    }
+    .rouge, .jaune, .bleu{
+        width: 300px;
+    }
+    ul{
+        width:300px;
+    }
+    #recherche{
+        width: 220px;
+    }
+    #text{
+        width: 150px;
+        margin-left: 1.25rem;
+    }
+    #loupe2{
+        margin-left:11.25rem;
+    }
+    #newTask{
+        padding-left: 1.25rem;
+    }
+    #modal_status{
+        margin-left: 5.625rem;
+        top: 21.875rem;
+    }
+    .line{
+        width: 100px;
+    }
+    #plus{
+        margin-left: 2rem;
+        margin-right: 2rem;
+        width: 40px;
+        height: 40px;
+    }
+    #ajout_task{
+        margin-left: 1.875rem;
+    }
+}
+
+@media screen and (max-device-width: 320px) {
+    #classement{
+        width: 240px;
+    }
+    .rouge, .jaune, .bleu{
+        width: 240px;
+    }
+    ul{
+        width:240px;
+    }
+    #recherche{
+        width: 200px;
+    }
+    .barre_bleu{
+        padding-left: 0.625rem;
+    }
+    #text{
+        margin-left: 0.625rem;
+    }
+    #modal_trier{
+        margin-left: 10rem;
+    }
+    #ajout_task{
+        margin-left: 0.625rem;
+    }
+    .line{
+        width: 90px;
+    }
+    #descriptask{
+        width: 215px;
+        margin-left: 0.625rem;
+        margin-top: 0.625rem;
+    }
+    #date{
+        width: 200px;
+    }
+    #status{
+        margin-left: 4.6875rem;
+    }
+    #modal_status{
+        margin-left: 5.625rem;
+        top: 21.875rem;
+    }
+    #validation{
+        margin-left: 6.25rem;
+    }
 }
